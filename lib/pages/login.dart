@@ -114,13 +114,13 @@ class _LoginState extends State<Login> {
             await FirebaseAuth.instance.signInWithCredential(credential);
         print(userCredentials.user);
         if (userCredentials.user != null) {
-          setState(() async {
-            final email = await fb.getUserEmail();
-            print("Email: $email");
+          final email = await fb.getUserEmail();
+          // print("Email: $email");
+          setState(() {
             user = userCredentials.user;
-            user!.updateEmail(email ?? 'zohaibsoomro006@gmail.com');
-            _navigateToInfoPage(user);
           });
+          await user!.updateEmail(email ?? 'zohaibhassan06@gmail.com');
+          _navigateToInfoPage(user);
         }
       }
     } catch (e) {

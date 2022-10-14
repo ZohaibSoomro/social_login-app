@@ -14,10 +14,14 @@ class InfoPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
-            radius: 50,
-            backgroundImage: NetworkImage(
-              user.photoURL ??
-                  'https://tse2.mm.bing.net/th?id=OIP.fBYQQAMqYDFxOh5dWobzLgHaFj&pid=Api&P=0',
+            backgroundColor: Colors.blue,
+            radius: 52,
+            child: CircleAvatar(
+              radius: 50,
+              backgroundImage: NetworkImage(
+                user.photoURL ??
+                    'https://tse2.mm.bing.net/th?id=OIP.fBYQQAMqYDFxOh5dWobzLgHaFj&pid=Api&P=0',
+              ),
             ),
           ),
           SizedBox(width: MediaQuery.of(context).size.width),
